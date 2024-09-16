@@ -34,7 +34,7 @@ class FakeRepository(Repository):
         return [
             result
             for result in self.results
-            if start_time <= result.timestamp <= end_time
+            if start_time <= datetime.fromisoformat(result.timestamp) <= end_time
         ]
 
 
