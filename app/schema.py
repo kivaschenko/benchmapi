@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 class Result(BaseModel):
     """Data model for the output of the GPT-3 API."""
+
     request_id: str
     prompt_text: str
     generated_text: str
@@ -12,3 +13,12 @@ class Result(BaseModel):
     time_per_output_token: int  # in milliseconds
     total_generation_time: int  # in milliseconds
     timestamp: str
+
+
+class AverageResults(BaseModel):
+    """Data model for the average performance metrics."""
+
+    average_token_count: float
+    average_time_to_first_token: float
+    average_time_per_output_token: float
+    average_total_generation_time: float
