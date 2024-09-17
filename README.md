@@ -64,3 +64,15 @@ For create tables and seed from file:
 python -m app.create_tables
 python -m app.seed_db
 ```
+
+## Docker
+Create image
+```
+docker build --tag benchmark-demo .
+```
+Run container
+```
+docker run -p 8000:8000 -d benchmark-demo
+```
+Check
+[localhost:8000/docs](localhost:8000/docs)
