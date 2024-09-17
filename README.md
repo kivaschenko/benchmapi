@@ -88,3 +88,10 @@ Check
 ![Screenshot](images/screen_result_1.png)
 ![Screenshot](images/screen_result_2.png)
 ![Screenshot](images/screen_result_3.png)
+
+
+## Pytest
+```
+poetry shell
+pytest
+```

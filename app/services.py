@@ -26,16 +26,16 @@ def average_performance(results: List[Result]) -> dict[str, float]:
             "average_time_per_output_token": 0,
             "average_total_generation_time": 0,
         }
-    avg_token_count = sum(result.token_count for result in results) / len(results)
-    avg_time_to_first_token = sum(
+    avg_token_count = round(sum(result.token_count for result in results) / len(results), 3)
+    avg_time_to_first_token = round(sum(
         result.time_to_first_token for result in results
-    ) / len(results)
-    avg_time_per_output_token = sum(
+    ) / len(results), 3)
+    avg_time_per_output_token = round(sum(
         result.time_per_output_token for result in results
-    ) / len(results)
-    avg_total_generation_time = sum(
+    ) / len(results), 3)
+    avg_total_generation_time = round(sum(
         result.total_generation_time for result in results
-    ) / len(results)
+    ) / len(results), 3)
 
     return {
         "average_token_count": avg_token_count,
