@@ -1,5 +1,6 @@
 # Stage 1: Build stage
 FROM python:3.11-slim AS builder
+ENV SUPERBENCHMARK_DEBUG=False
 WORKDIR /app
 
 # Install curl and Poetry
