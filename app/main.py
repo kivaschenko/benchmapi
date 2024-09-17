@@ -9,7 +9,7 @@ from .repository import Repository, FakeRepository, DatabaseRepository
 from .services import get_results, get_results_in_time_window, average_performance
 from .database import get_db
 
-app = FastAPI()
+app = FastAPI(title="Superbenchmark API", version="0.1.0")
 
 SUPERBENCHMARK_DEBUG = os.getenv("SUPERBENCHMARK_DEBUG", "False").lower() == "true"
 
