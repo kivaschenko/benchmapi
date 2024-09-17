@@ -1,8 +1,9 @@
 # Superbenchmark :)
 ## Demo
-[Swagger API](https://superbenchmark.gentlecoast-77bec0b6.westus2.azurecontainerapps.io/docs)
+<a href="https://superbenchmark.gentlecoast-77bec0b6.westus2.azurecontainerapps.io/docs" target="_blank">Swagger API</a>
 
-[API](https://superbenchmark.gentlecoast-77bec0b6.westus2.azurecontainerapps.io/redoc)
+<a href="https://superbenchmark.gentlecoast-77bec0b6.westus2.azurecontainerapps.io/redoc" target="_blank">API</a>
+
 ## Running the Application in Debug Mode
 
 ### Set Up Environment Variables
