@@ -1,3 +1,8 @@
+# Superbenchmark :)
+## Demo
+[Swagger API](https://superbenchmark.gentlecoast-77bec0b6.westus2.azurecontainerapps.io/docs)
+
+[API](https://superbenchmark.gentlecoast-77bec0b6.westus2.azurecontainerapps.io/redoc)
 ## Running the Application in Debug Mode
 
 ### Set Up Environment Variables
@@ -94,4 +99,10 @@ Check
 ```
 poetry shell
 pytest
+```
+
+## Production on Azure
+To deploy:
+```
+az containerapp up --resource-group web-fastapi-benchm --name superbenchmark --ingress external --target-port 8000 --source .
 ```
