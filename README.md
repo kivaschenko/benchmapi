@@ -2,6 +2,8 @@
 
 ### Set Up Environment Variables
 
+To use from `.json` file set `DEBUG=True`, to use DB - set `False`
+
 #### Pip
 
 Ensure you have a `.env` file in the root of your project with the following content:
@@ -10,6 +12,7 @@ Ensure you have a `.env` file in the root of your project with the following con
 DATABASE_URL=sqlite:///./test.db
 SUPERBENCHMARK_DEBUG=True
 ```
+
 Install Dependencies
 Install the required dependencies using pip:
 ```

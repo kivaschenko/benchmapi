@@ -1,3 +1,4 @@
+# Description: This file contains the database setup and the function to load the test data.
 import json
 import os
 from pathlib import Path
@@ -10,7 +11,7 @@ from .schema import Result
 
 load_dotenv()
 
-SUPERBENCHMARK_DEBUG = os.getenv("SUPERBENCHMARK_DEBUG", "False")
+SUPERBENCHMARK_DEBUG = os.getenv("SUPERBENCHMARK_DEBUG", "False").lower() == "true"
 DATABASE_URL = os.getenv("DATABASE_URL")
 FAKE_DB_PATH = Path(__file__).parent / "test_database.json"
 
@@ -20,6 +21,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 def get_db():
+    """Get the database session."""
     db = SessionLocal()
     try:
         yield db

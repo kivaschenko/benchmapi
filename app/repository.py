@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 
 from .schema import Result
 from .model_db import ResultModel
+from .database import load_test_data
 
 
 class Repository(Protocol):
@@ -22,8 +23,9 @@ class Repository(Protocol):
 
 class FakeRepository(Repository):
     """Fake repository for testing purposes."""
-    def __init__(self, results: List[Result] = []):
+    def __init__(self, results: List[Result] = load_test_data()):
         self.results = results
+        print(f"Loaded results to fake repository: {results[:1]}...")
 
     def get_results(self) -> List[Result]:
         return self.results

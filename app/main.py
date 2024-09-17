@@ -16,9 +16,13 @@ SUPERBENCHMARK_DEBUG = os.getenv("SUPERBENCHMARK_DEBUG", "False").lower() == "tr
 
 def get_repository(db: Session = Depends(get_db)) -> Repository:
     """Return the repository based on the environment variable."""
+    print(f"DEBUG: {SUPERBENCHMARK_DEBUG}")
     if SUPERBENCHMARK_DEBUG:
-        return FakeRepository()
-    return DatabaseRepository(db)
+        repository = FakeRepository()
+    else:
+        repository = DatabaseRepository(db)
+    print(f"Using repository: {repository}")
+    return repository
 
 
 @app.get("/results/average", response_model=AverageResults, tags=["results"])
